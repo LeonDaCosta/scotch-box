@@ -1,6 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# We're going to read from yaml file, so we require YAML module
+#require 'yaml'
+
+#domains = YAML.load_file('domains.yml')
+
 Vagrant.configure("2") do |config|
 
     config.vm.box = "scotch/box"
@@ -11,4 +16,11 @@ Vagrant.configure("2") do |config|
     # Optional NFS. Make sure to remove other synced_folder line too
     #config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
+    config.vm.provision :shell, path: "phpmyadmin.sh"
+    
+    #domains.each do |domains|
+    #    domain = domains["sitedomain"]
+    #    config.vm.provision :shell, path: "createdomain.sh create #{domain}"
+    #end
+    
 end

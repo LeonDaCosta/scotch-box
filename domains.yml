@@ -1,0 +1,7 @@
+#site specific settings
+site:
+  sitedomain: claytonsquare.box
+  folder: site-clayton-square
+site:
+  sitedomain: nicholsonsshoppingcentre.box
+  folder: site-nicholsonsc
