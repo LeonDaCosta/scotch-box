@@ -12,4 +12,8 @@ else
     echo "phpmyadmin phpmyadmin/mysql/app-pass password $DBPASSWD" | debconf-set-selections
     echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect none" | debconf-set-selections
     apt-get -y install phpmyadmin > /dev/null 2>&1
+
+    ## Additional PHP extension
+    apt-get -y install php7.0-xml
+    service apache2 restart
 fi
