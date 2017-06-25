@@ -14,6 +14,7 @@ else
     apt-get -y install phpmyadmin > /dev/null 2>&1
 
     ## Additional PHP extension
-    apt-get -y install php7.0-xml
+    apt-get -y install php7.0-mbstring php7.0-zip php7.0-xml
+    ## apt-get -y install php7.0-xml
     service apache2 restart
 fi
